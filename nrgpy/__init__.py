@@ -10,7 +10,7 @@ logfile_name = "nrgpy.log"
 
 try:
     username = getpass.getuser()
-    home_dir = os.path.expanduser("~/")
+    home_dir = os.path.expanduser("/tmp/")
 
     os.makedirs(os.path.join(home_dir, ".nrgpy"), exist_ok=True)
 
@@ -45,7 +45,7 @@ from .api.convert import nrg_api_convert  # noqa: E402, F401
 from .api.export import nrg_api_export  # noqa: E402, F401
 from .api.upload import nrg_api_upload  # noqa: E402, F401
 from .cloud_api.auth import cloud_api, CloudApi  # noqa: E402, F401
-from .cloud_api.convert import cloud_convert, CloudConvert # noqa: E402, F401
+from .cloud_api.convert import cloud_convert, CloudConvert  # noqa: E402, F401
 from .cloud_api.export import cloud_export, CloudExport  # noqa: E402, F401
 from .cloud_api.jobs import export_job, CloudExportJob  # noqa: E402, F401
 from .cloud_api.sites import cloud_sites, CloudSites  # noqa: E402, F401
@@ -53,7 +53,11 @@ from .cloud_api.upload import cloud_import, CloudImport  # noqa: E402, F401
 from .quality.quality import check_intervals, select_interval_length  # noqa: E402, F401
 from .read.logr import LogrRead  # noqa: E402, F401
 from .read.spidar_txt import SpidarRead, spidar_data_read  # noqa: E402, F401
-from .read.sympro_txt import SymProTextRead, sympro_txt_read, shift_timestamps  # noqa: E402, F401, E501
+from .read.sympro_txt import (
+    SymProTextRead,
+    sympro_txt_read,
+    shift_timestamps,
+)  # noqa: E402, F401, E501
 from .read.txt_utils import read_text_data  # noqa: E402, F401
 from .utils.encodings import convert_utf16le_to_utf8  # noqa: E402, F401
 from .utils.ipk2lgr import ipk2lgr  # noqa: E402, F401
